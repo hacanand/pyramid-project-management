@@ -5,9 +5,8 @@ services:
       branch: deploy-koyeb
       workdir: pyramid-project-management-BE
     builder:
-      buildpack:
-        build_command: "npm ci && npm run build"
-        run_command: "npm run start:prod"
+      docker:
+        dockerfile: Dockerfile
     ports:
       - port: 3001
         protocol: http
@@ -24,9 +23,8 @@ services:
       branch: deploy-koyeb
       workdir: pyramid-project-management-FE
     builder:
-      buildpack:
-        build_command: "npm ci && npm run build"
-        run_command: "npm start"
+      docker:
+        dockerfile: Dockerfile
     ports:
       - port: 3000
         protocol: http
