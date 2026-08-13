@@ -13,12 +13,12 @@ COPY . .
 
 # Build the backend
 WORKDIR /app/pyramid-project-management-BE
-RUN npm ci
+RUN npm install
 RUN npm run build
 
 # Build the frontend
 WORKDIR /app/pyramid-project-management-FE
-RUN npm ci
+RUN npm install
 RUN npm run build
 
 # Go back to root

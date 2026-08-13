@@ -1,8 +1,8 @@
-node_modules
-dist
-out
-.next
-.env
-.git
-.koyeb
-*.log
+**/node_modules
+**/dist
+**/out
+**/.next
+**/.env
+**/.git
+**/.koyeb
+**/*.log
