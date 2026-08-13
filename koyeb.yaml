@@ -1,0 +1,36 @@
+services:
+  - name: backend
+    github:
+      repository: hacanand/pyramid-project-management
+      branch: deploy-koyeb
+      workdir: /pyramid-project-management-BE
+    builder:
+      buildpack:
+        build_command: "npm ci && npm run build"
+        run_command: "npm run start:prod"
+    ports:
+      - port: 3000
+        protocol: http
+    routes:
+      - path: /
+        port: 3000
+    env:
+      - NODE_ENV=production
+
+  - name: frontend
+    github:
+      repository: hacanand/pyramid-project-management
+      branch: deploy-koyeb
+      workdir: /pyramid-project-management-FE
+    builder:
+      buildpack:
+        build_command: "npm ci && npm run build"
+        run_command: "npm start"
+    ports:
+      - port: 3000
+        protocol: http
+    routes:
+      - path: /
+        port: 3000
+    env:
+      - NODE_ENV=production
