@@ -25,8 +25,8 @@ RUN npm run build
 WORKDIR /app
 
 # Expose both ports
-EXPOSE 3000
-EXPOSE 3001
+EXPOSE 8000
+EXPOSE 8001
 
 # Start pm2 with ecosystem.config.js
 CMD ["pm2-runtime", "start", "ecosystem.config.js"]

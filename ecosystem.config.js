@@ -6,7 +6,7 @@ module.exports = {
       script: "npm",
       args: "run start:prod",
       env: {
-        PORT: 3001,
+        PORT: 8001,
         NODE_ENV: "production"
       }
     },
@@ -16,7 +16,7 @@ module.exports = {
       script: "npm",
       args: "start",
       env: {
-        PORT: 3000,
+        PORT: 8000,
         NODE_ENV: "production"
       }
     }

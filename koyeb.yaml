@@ -8,15 +8,11 @@ services:
       docker:
         dockerfile: Dockerfile
     ports:
-      - port: 3000
-        protocol: http
-      - port: 3001
+      - port: 8000
         protocol: http
     routes:
       - path: /
-        port: 3000
-      - path: /api
-        port: 3001
+        port: 8000
     env:
       - NODE_ENV=production
       - NEXT_PUBLIC_API_BASE_URL=/api
