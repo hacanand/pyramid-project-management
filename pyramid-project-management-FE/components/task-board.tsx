@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import Link from "next/link"
 import { Plus, MoreHorizontal, GripVertical, CalendarDays, Folder } from "lucide-react"
 import { toast } from "sonner"
@@ -234,6 +234,8 @@ function BoardColumn({
     )
   }
 
+  const taskIds = useMemo(() => tasks.map(t => t.id), [tasks])
+
   return (
     <div
       ref={setNodeRef}
@@ -273,7 +275,7 @@ function BoardColumn({
       </div>
 
       <div className="flex flex-col gap-2 px-2 pb-2 min-h-[4rem]">
-        <SortableContext items={tasks.map(t => t.id)} strategy={verticalListSortingStrategy}>
+        <SortableContext items={taskIds} strategy={verticalListSortingStrategy}>
           {tasks.map((task) => (
             <SortableTask key={task.id} task={task} fields={fields} projectId={projectId} />
           ))}
