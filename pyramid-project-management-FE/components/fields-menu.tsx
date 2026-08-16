@@ -46,7 +46,7 @@ export function FieldsMenu({
               type="button"
               onClick={() => onViewChange("list")}
               className={cn(
-                "flex items-center justify-center gap-1.5 rounded-md py-1.5 text-sm font-medium transition-colors",
+                "flex items-center justify-center gap-1.5 rounded-md py-1.5 text-sm font-medium transition-colors cursor-pointer",
                 view === "list" ? "bg-background shadow-sm" : "text-muted-foreground hover:text-foreground",
               )}
             >
@@ -57,7 +57,7 @@ export function FieldsMenu({
               type="button"
               onClick={() => onViewChange("board")}
               className={cn(
-                "flex items-center justify-center gap-1.5 rounded-md py-1.5 text-sm font-medium transition-colors",
+                "flex items-center justify-center gap-1.5 rounded-md py-1.5 text-sm font-medium transition-colors cursor-pointer",
                 view === "board" ? "bg-background shadow-sm" : "text-muted-foreground hover:text-foreground",
               )}
             >
@@ -72,7 +72,7 @@ export function FieldsMenu({
               key={row.key}
               type="button"
               onClick={() => onToggleField(row.key)}
-              className="flex items-center justify-between rounded-md px-2 py-2 text-sm transition-colors hover:bg-muted"
+              className="flex items-center justify-between rounded-md px-2 py-2 text-sm transition-colors hover:bg-muted cursor-pointer"
             >
               <span>{row.label}</span>
               <Checkbox checked={fields[row.key]} className="pointer-events-none" />
