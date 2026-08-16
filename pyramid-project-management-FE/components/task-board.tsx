@@ -116,10 +116,17 @@ export function TaskBoard({
     const { active, over } = e
     setActiveId(null)
     setActiveType(null)
-    if (!over) return
 
     const activeType = active.data.current?.type
     const activeId = active.id as string
+
+    if (!over) {
+      if (activeType === "Task") {
+        setTasks(propTasks)
+      }
+      return
+    }
+
     const overId = over.id as string
 
     if (activeType === "Column") {
@@ -144,6 +151,12 @@ export function TaskBoard({
     }
   }
 
+  const onDragCancel = () => {
+    setActiveId(null)
+    setActiveType(null)
+    setTasks(propTasks)
+  }
+
   const activeTask = activeId ? tasks.find((t) => t.id === activeId) : null
 
   return (
@@ -153,6 +166,7 @@ export function TaskBoard({
       onDragStart={onDragStart}
       onDragOver={onDragOver}
       onDragEnd={onDragEnd}
+      onDragCancel={onDragCancel}
     >
       <div className="flex gap-4 overflow-x-auto pb-4 h-full min-h-[500px]">
         <SortableContext items={columns} strategy={horizontalListSortingStrategy}>
