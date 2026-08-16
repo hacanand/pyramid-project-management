@@ -352,7 +352,7 @@ function BoardCard({ task, fields, isDragging, projectId }: { task: Task; fields
             e.stopPropagation()
             toast.info("Task options coming soon")
           }}
-          className="size-6 shrink-0 opacity-0 transition-all hover:bg-muted group-hover:opacity-100 pointer-events-auto"
+          className="size-6 shrink-0 transition-all hover:bg-muted pointer-events-auto"
         >
           <MoreHorizontal className="size-4 text-muted-foreground" />
         </Button>

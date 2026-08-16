@@ -148,7 +148,7 @@ export function ProjectsView() {
                     <td className="px-4 py-3 text-right">
                       <DropdownMenu>
                         <DropdownMenuTrigger
-                          className="inline-flex size-7 items-center justify-center rounded-md text-muted-foreground opacity-0 transition-all hover:bg-muted hover:text-foreground group-hover:opacity-100 aria-expanded:opacity-100"
+                          className="inline-flex size-7 items-center justify-center rounded-md text-muted-foreground transition-all hover:bg-muted hover:text-foreground aria-expanded:opacity-100"
                           aria-label="Project actions"
                         >
                           <MoreHorizontal className="size-4" />

@@ -168,7 +168,7 @@ function RowActions({ taskId }: { taskId: string }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        className="inline-flex size-7 items-center justify-center rounded-md text-muted-foreground opacity-0 transition-all hover:bg-muted hover:text-foreground group-hover:opacity-100 aria-expanded:opacity-100"
+        className="inline-flex size-7 items-center justify-center rounded-md text-muted-foreground transition-all hover:bg-muted hover:text-foreground aria-expanded:opacity-100"
         aria-label="Task actions"
       >
         <MoreHorizontal className="size-4" />

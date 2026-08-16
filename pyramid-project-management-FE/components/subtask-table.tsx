@@ -73,7 +73,7 @@ export function SubtaskTable({ subtasks, taskId }: { subtasks: SubTask[]; taskId
                   type="button"
                   onClick={() => toast.info("Subtask options coming soon")}
                   aria-label="Subtask actions"
-                  className="inline-flex size-7 items-center justify-center rounded-md text-muted-foreground opacity-0 transition-all hover:bg-muted hover:text-foreground group-hover:opacity-100"
+                  className="inline-flex size-7 items-center justify-center rounded-md text-muted-foreground transition-all hover:bg-muted hover:text-foreground"
                 >
                   <MoreHorizontal className="size-4" />
                 </button>
