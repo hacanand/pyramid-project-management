@@ -228,13 +228,13 @@ function BoardColumn({
     transition,
   }
 
+  const taskIds = useMemo(() => tasks.map(t => t.id), [tasks])
+
   if (isDragging && !isOverlay) {
     return (
       <div ref={setNodeRef} style={style} className="flex w-72 shrink-0 rounded-xl border-2 border-primary border-dashed bg-primary/5 opacity-50 h-[500px]" />
     )
   }
-
-  const taskIds = useMemo(() => tasks.map(t => t.id), [tasks])
 
   return (
     <div
