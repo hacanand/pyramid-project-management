@@ -1,6 +1,6 @@
 "use client"
 
-import type { ReactNode } from "react"
+import { Fragment, type ReactNode } from "react"
 import { PanelLeft } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import {
@@ -37,16 +37,16 @@ export function TopBar({
           <Breadcrumb>
             <BreadcrumbList>
               {crumbs.map((c, i) => (
-                <BreadcrumbItem key={c.label}>
-                  {i < crumbs.length - 1 ? (
-                    <>
+                <Fragment key={c.label}>
+                  <BreadcrumbItem>
+                    {i < crumbs.length - 1 ? (
                       <BreadcrumbLink href={c.href ?? "#"}>{c.label}</BreadcrumbLink>
-                      <BreadcrumbSeparator />
-                    </>
-                  ) : (
-                    <BreadcrumbPage>{c.label}</BreadcrumbPage>
-                  )}
-                </BreadcrumbItem>
+                    ) : (
+                      <BreadcrumbPage>{c.label}</BreadcrumbPage>
+                    )}
+                  </BreadcrumbItem>
+                  {i < crumbs.length - 1 && <BreadcrumbSeparator />}
+                </Fragment>
               ))}
             </BreadcrumbList>
           </Breadcrumb>
