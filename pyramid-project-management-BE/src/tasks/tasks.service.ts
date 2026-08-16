@@ -32,7 +32,7 @@ export class TasksService {
   }
 
   async update(id: string, updateTaskDto: UpdateTaskDto): Promise<Task> {
-    const updatedTask = await this.taskModel.findByIdAndUpdate(id, updateTaskDto, { new: true }).exec();
+    const updatedTask = await this.taskModel.findByIdAndUpdate(id, updateTaskDto, { returnDocument: 'after' }).exec();
     if (!updatedTask) {
       throw new NotFoundException(`Task with ID ${id} not found`);
     }
@@ -50,7 +50,7 @@ export class TasksService {
     const task = await this.taskModel.findByIdAndUpdate(
       id,
       { $push: { comments: createCommentDto } },
-      { new: true }
+      { returnDocument: 'after' }
     ).exec();
     if (!task) throw new NotFoundException(`Task with ID ${id} not found`);
     return task.comments[task.comments.length - 1]; // Return the created comment
@@ -60,7 +60,7 @@ export class TasksService {
     const task = await this.taskModel.findByIdAndUpdate(
       id,
       { $push: { subtasks: createSubTaskDto } },
-      { new: true }
+      { returnDocument: 'after' }
     ).exec();
     if (!task) throw new NotFoundException(`Task with ID ${id} not found`);
     return task.subtasks[task.subtasks.length - 1]; // Return the created subtask
