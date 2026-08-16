@@ -22,7 +22,7 @@ export function TopBar({
 }) {
   const { toggle } = useSidebar()
   return (
-    <header className="flex h-14 shrink-0 items-center gap-2 border-b border-border px-4">
+    <header className="flex h-14 shrink-0 items-center gap-2 border-b border-border px-6 lg:px-10">
       <button
         type="button"
         onClick={toggle}

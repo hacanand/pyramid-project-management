@@ -56,7 +56,7 @@ export function ProjectsView() {
       <TopBar />
 
       <div className="min-h-0 flex-1 overflow-auto">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-6">
+        <div className="flex flex-col gap-6 px-6 py-6 lg:px-10 lg:py-8 h-full">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <h1 className="text-2xl font-semibold tracking-tight">Projects</h1>
             <div className="flex items-center gap-2">
