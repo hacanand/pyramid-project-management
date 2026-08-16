@@ -47,9 +47,19 @@ export class TasksService {
   }
 
   async addComment(id: string, createCommentDto: CreateCommentDto): Promise<any> {
+    const newComment = {
+      body: createCommentDto.body,
+      timestamp: 'just now',
+      author: {
+        name: 'Dexter',
+        initials: 'D',
+        avatar: '/placeholder.svg'
+      }
+    };
+
     const task = await this.taskModel.findByIdAndUpdate(
       id,
-      { $push: { comments: createCommentDto } },
+      { $push: { comments: newComment } },
       { returnDocument: 'after' }
     ).exec();
     if (!task) throw new NotFoundException(`Task with ID ${id} not found`);

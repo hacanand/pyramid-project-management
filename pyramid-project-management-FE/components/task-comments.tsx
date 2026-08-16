@@ -25,13 +25,13 @@ export function TaskComments({ comments, taskId }: { comments: Comment[], taskId
         <div key={c.id} className="rounded-xl border border-border">
           <div className="flex items-start gap-2.5 p-3">
             <Avatar className="size-6">
-              <AvatarImage src={c.author.avatar || "/placeholder.svg"} alt={c.author.name} />
-              <AvatarFallback className="text-[10px]">{c.author.initials}</AvatarFallback>
+              <AvatarImage src={c.author?.avatar || "/placeholder.svg"} alt={c.author?.name || "Unknown"} />
+              <AvatarFallback className="text-[10px]">{c.author?.initials || "U"}</AvatarFallback>
             </Avatar>
             <div className="flex-1">
               <div className="flex items-center gap-2">
-                <span className="text-sm font-medium">{c.author.name}</span>
-                <span className="text-xs text-muted-foreground">{c.timestamp}</span>
+                <span className="text-sm font-medium">{c.author?.name || "Unknown User"}</span>
+                <span className="text-xs text-muted-foreground">{c.timestamp || "just now"}</span>
                 <div className="ml-auto flex items-center gap-1 text-muted-foreground">
                   <button type="button" aria-label="React" onClick={() => toast.info("Reactions coming soon")} className="rounded-md p-1 hover:bg-muted">
                     <SmilePlus className="size-4" />

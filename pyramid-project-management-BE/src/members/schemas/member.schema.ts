@@ -12,6 +12,12 @@ export class Member {
   avatarUrl: string;
 
   @Prop()
+  avatar: string;
+
+  @Prop()
+  initials: string;
+
+  @Prop()
   role: string;
 }
 
